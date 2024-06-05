@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %} 
+<div class="container">
+    <form method="post" class="row mt-5">           
+        <div class="col-md-8">
+            <h1>{% block titulo %}Cambiar contraseña{% endblock %}</h1>                                
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nombre de usuario</label>
+                    <input type="text" class="form-control" style="background-color:#C0C0C0" value="{{ g.user.username }}" id="username" name="username" readonly>
+                </div>                        
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña actual</label>
+                    <input type="password" class="form-control" id="password_act" name="password_act" style="background-color:#DCDCDC">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Nueva contraseña</label>
+                    <input type="password" class="form-control" id="password_new" name="password_new" minlength="4" style="background-color:#DCDCDC">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Repite Nueva contraseña</label>
+                    <input type="password" class="form-control" id="password_new_rep" name="password_new_rep" minlength="4" style="background-color:#DCDCDC">
+                </div>
+                <button type="submit" class="btn custom-button-blue">Guardar Cambios</button>             
+                <a href="{{ url_for('apli.funcion_home') }}" class="btn custom-button-gray">Cancelar</a>    
+            </div>
+        </div>        
+    </form>
+</div>  
+{% endblock %}
+

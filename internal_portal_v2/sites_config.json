@@ -1,0 +1,72 @@
+[
+    {
+        "name": "General",
+        "sites": [
+            {
+                "url": "https://www.ayscom.com/",
+                "img": "img/ayscom-web.png",
+                "name": "Ayscom Webpage"
+            },
+            {
+                "url": "https://ayscomdatatec.com/es/",
+                "img": "img/ayscom-dt-web.png",
+                "name": "Ayscom Datatec Webpage"
+            },
+            {
+                "url": "https://ayscomcelular.sharepoint.com/sites/PortalAyscom",
+                "img": "img/ayscomplanet.png",
+                "name": "Ayscom Planet (Sharepoint)"
+            },
+            {
+                "url": "https://ayscomcelular.sharepoint.com/sites/Serviciosprofesionales/Shared%20Documents/Forms/AllItems.aspx",
+                "img": "img/onedrive-sp.png",
+                "name": "One Drive (Servicios Profesionales)"
+            },
+            {
+                "url": "https://app.sesametime.com",
+                "img": "img/sesame.png",
+                "name": "Sesame"
+            },
+            {
+                "url": "https://app.timetastic.co.uk/wallchart#",
+                "img": "img/timetastic.png",
+                "name": "Timetastic"
+            },
+            {
+                "url": "https://support.ayscom.com/",
+                "img": "img/redmine.png",
+                "name": "Redmine"
+            },
+            {
+                "url": "https://18.159.12.25/",
+                "img": "img/passbolt.png",
+                "name": "PassBolt"
+            }
+        ]
+    },
+    {
+        "name": "Servicios",
+        "sites": [
+            {
+                "url": "https://gitlab.com/ayscom",
+                "img": "img/gitlab.png",
+                "name": "Ayscom Gitlab (internet)"
+            },
+            {
+                "url": "https://10.21.0.91/",
+                "img": "img/gitlab2.png",
+                "name": "Ayscom Gitlab (oficina)"
+            },
+            {
+                "url": "https://10.21.0.101:3000/projects/",
+                "img": "img/sonarqube.png",
+                "name": "Sonarqube (oficina)"
+            },
+            {
+                "url": "http://10.21.0.113:8080/",
+                "img": "img/airflow.png",
+                "name": "Airflow (oficina)"
+            }
+        ]
+    }
+]

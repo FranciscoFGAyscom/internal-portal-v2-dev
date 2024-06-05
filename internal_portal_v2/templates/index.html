@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %} 
+    
+    <div class="container-sm text-center" style="font-size:14px;">
+        
+        <div class="container mt-5">
+            <img src="{{ url_for('static', filename='img/ayscom-logo-3.png') }}" class="img-fluid" alt="Imagen Responsive">
+        </div>
+
+        <p class="lead">Registrate o inicia sesión</p>
+
+        <hr class="my-3">  
+        <p>Bienvenido al portal Ayscom.<br>Desde aqui tienes un acceso rápido y fácil a las diferentes webs de la compañia y a los portales de servicios.</p>
+        <p>Tienes una cuenta?</p>
+
+        <div class="d-flex justify-content-center">
+            <a href="{{url_for('auth.funcion_login')}}" class="btn custom-button-blue mx-2">Iniciar sesión</a>
+            <a href="{{url_for('auth.funcion_register')}}" class="btn custom-button-gray mx-2">Registrarse</a>
+        </div>
+
+    </div>    
+
+{% endblock %}

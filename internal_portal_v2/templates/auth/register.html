@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+
+{% block contenido %} 
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <div class="card custom-card">
+                <div class="card-header custom-card-header">
+                    <h2 class="text-center">{% block titulo %}Registrar Usuario{% endblock %}</h2>    
+                </div>
+                <div class="card-body custom-card-body">
+                    <p style="font-size:14px; margin-bottom:30px;">Introduce tu cuenta de correo Ayscom, pulsa Registrar usuario y recibiras un correo con tu contraseña de acceso.</p>
+                    <form action="" method="post">
+                    <div class="form-group">
+                        <label for="username">Correo electrónico Ayscom</label>
+                        <input type="text" class="form-control" id="username" name="username" required minlength="4" maxlength="40"
+                         style="background-color:#DCDCDC">
+                    </div>    
+                    <div class="form-group" style="display: none;">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" disabled  minlength="6" maxlength="20"
+                         style="background-color:#DCDCDC">
+                    </div>  
+                    <div class="text-center" style="margin-top:25px;">                        
+                        <input type="submit" class="btn custom-button-blue" value="Registrar usuario">
+                        <a href="{{ url_for('index') }}" class="btn custom-button-gray">Cancelar</a>   
+                    </div>   
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Ayscom - {% block titulo %} {% endblock %} </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/all.min.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+
+</head>
+<body>
+  
+  <nav>
+    <div class="nav-container">
+        {% if g.user %} 
+        <a class="navbar-brand" href="{{url_for('apli.funcion_home')}}">
+          <img src="{{ url_for('static', filename='img/ayscom_0d3859.png') }}" alt="Logo" class="nav-logo img-fluid">
+        </a>
+
+        {% else %} 
+        <a class="navbar-brand" href="{{url_for('index')}}">
+          <img src="{{ url_for('static', filename='img/ayscom_0d3859.png') }}" alt="Logo" class="nav-logo img-fluid">  
+        </a>
+        {% endif %}  
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="nav-list">
+          {% if g.user %}               
+            <li><a href="{{ url_for('auth.funcion_cambiar_pass', id=g.user.user_id) }}" class="nav-link">Cambiar contraseña</a></li>
+            <li><a href="{{url_for('auth.funcion_logout')}}" class="nav-link">Cerrar sesión</a></li>
+          {% else %} 
+            <li><a href="{{url_for('auth.funcion_register')}}" class="nav-link">Registrarse</a></li>
+            <li><a href="{{url_for('auth.funcion_login')}}" class="nav-link">Iniciar sesión</a></li>
+          {% endif %}  
+        </ul>
+    </div>
+  </nav>
+
+    {% block contenido %} 
+    {% endblock %}
+
+    <!-- Mostramos los mensajes almacenados en el objeto flash desde auth.py-->
+    {% for var_str_msg in get_flashed_messages() %}
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+          {% if "correctamente" in var_str_msg %} 
+          <div class="alert alert-info" role="alert">          
+          {% else %}  
+          <div class="alert alert-danger" role="alert">
+          {% endif %}
+          {{ var_str_msg }}
+          </div>  
+        </div>  
+      </div>
+    </div>
+    {% endfor %}          
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+</html>
